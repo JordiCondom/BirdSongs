@@ -5,10 +5,9 @@ Run the given command in your terminal: *brew install node*
 
 ### Step 2: Verify Node.js and NPM Installation
 For Node: *node -v*
-
 For NPM: *npm -v*
 
-### Step 3: Dowload files and save them in a folder
+### Step 3: Dowload files and save them in a folder
 
 ### Step 4: From the terminal, go to the folder you saved all the files in
 
