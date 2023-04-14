@@ -1,6 +1,6 @@
 # BirdSounds
- 
-### Step 1: Install Node.js and NPM
+
+### Step 1: Install Node.js and NPM
 Run the given command in your terminal: **brew install node**
 
 ### Step 2: Verify Node.js and NPM Installation
