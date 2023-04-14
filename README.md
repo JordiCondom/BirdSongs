@@ -10,6 +10,8 @@ For NPM: **npm -v**
 
 ### Step 3: Dowload files and save them in a folder
 
+Go to the main page of the github repository, top right green Code button. Open it and download it as a zip and unzip it in a folder.
+
 ### Step 4: From the terminal, go to the folder you saved all the files in
 
 ### Step 5: Execute the server
