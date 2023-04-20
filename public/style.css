@@ -1,29 +1,78 @@
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .button {
-    margin: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #2d9cdb;
-    cursor: pointer;
-  }
-  
-  #feedback {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .correct {
-    color: green;
-  }
-  
-  .incorrect {
-    color: red;
-  }
-  
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.button {
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #2d9cdb;
+  cursor: pointer;
+}
+
+#feedback {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.sound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+  margin-bottom: 0px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+/* Change the color of the player's controls */
+#audio-player::-webkit-media-controls-panel {
+  background-color: #00602e;
+}
+
+/* Hide the timeline and volume controls */
+audio::-webkit-media-controls-current-time-display,
+#audio-player::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+

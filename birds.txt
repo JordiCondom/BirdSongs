@@ -140,7 +140,7 @@ const all_sounds = [
   { name: 'Mussol comú', file: 'mussolComu.mp3' },
   { name: 'Mussol pirinenc', file: 'mussolPirinenc.mp3' },
   { name: 'Oca egípcia', file: 'ocaEgipcia.mp3' },
-  { name: 'Oca vulgar', file: 'ocaVulgar' },
+  { name: 'Oca vulgar', file: 'ocaVulgar.mp3' },
   { name: 'Oreneta cua-rogenca', file: 'orenetaCuaRogenca.mp3' },
   { name: 'Oreneta cuablanca', file: 'orenetaCuaBlanca.mp3' },
   { name: 'Oreneta de ribera', file: 'orenetaDeRibera.mp3' },
