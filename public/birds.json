@@ -375,8 +375,7 @@
       { "name": "Merla", "file": "merla.mp3" , "image": "merla.jpeg"},
       { "name": "Pardal comú", "file": "pardalComu.mp3" , "image": "pardalComu.jpeg"},
       { "name": "Rossinyol comú", "file": "rossinyolComu.mp3" , "image": "rossinyolComu.jpeg"},
-      { "name": "Tórtora turca", "file": "tortoraTurca.mp3" , "image": "tortoraTurca.jpeg"},
-      { "name": "Rossinyol comú", "file": "rossinyolComu.mp3" , "image": "rossinyolComu.jpeg"}
+      { "name": "Tórtora turca", "file": "tortoraTurca.mp3" , "image": "tortoraTurca.jpeg"}
     ]
 
 }
