@@ -22,6 +22,7 @@ fetch('birds.json')
     intermig = data["intermig"]
     facils = data["facils"]
     starter_sounds = data["starter"]
+    nivell0_sounds = data["nivell0"]
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -38,11 +39,13 @@ fetch('birds.json')
         change_level(all_sounds)
       } else if (current_level == 'starter') {
         change_level(starter_sounds)
+      } else if (current_level == 'nivell0') {
+        change_level(nivell0_sounds)
       }
     } else {
-      current_level = 'easy'
+      current_level = 'nivell0'
       levelSelect.value = current_level
-      sounds = facils
+      sounds = nivell0_sounds
 
       let currentSoundIndex = Math.floor(Math.random() * sounds.length);
       currentSound = sounds[currentSoundIndex];
@@ -95,6 +98,9 @@ levelSelect.addEventListener('change', (event) => {
   } else if (lvl == 'starter') {
     current_level = 'starter'
     change_level(starter_sounds)
+  } else if (lvl == 'nivell0') {
+    current_level = 'nivell0'
+    change_level(nivell0_sounds)
   }
 });
 

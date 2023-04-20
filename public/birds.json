@@ -364,5 +364,19 @@
       { "name": "Tórtora turca", "file": "tortoraTurca.mp3" , "image": "tortoraTurca.jpeg"},
       { "name": "Xoriguer comú", "file": "xoriguerComu.mp3" , "image": "xoriguerComu.jpeg"},
       { "name": "Xot", "file": "xot.mp3", "image": "xot.jpeg"}
+    ],
+    "nivell0": [
+      { "name": "Cadernera", "file": "cadernera.mp3" , "image": "cadernera.jpeg"},
+      { "name": "Colom roquer", "file": "colomRoquer.mp3" , "image": "colomRoquer.jpeg"},
+      { "name": "Corb", "file": "corb.mp3" , "image": "corb.jpeg"},
+      { "name": "Estornell vulgar", "file": "estornellVulgar.mp3" , "image": "estornellVulgar.jpeg"},
+      { "name": "Garsa", "file": "garsa.mp3" , "image": "garsa.jpeg"},
+      { "name": "Mallerenga carbonera", "file": "mallerengaCarbonera.mp3" , "image": "mallerengaCarbonera.jpeg"},
+      { "name": "Merla", "file": "merla.mp3" , "image": "merla.jpeg"},
+      { "name": "Pardal comú", "file": "pardalComu.mp3" , "image": "pardalComu.jpeg"},
+      { "name": "Rossinyol comú", "file": "rossinyolComu.mp3" , "image": "rossinyolComu.jpeg"},
+      { "name": "Tórtora turca", "file": "tortoraTurca.mp3" , "image": "tortoraTurca.jpeg"},
+      { "name": "Rossinyol comú", "file": "rossinyolComu.mp3" , "image": "rossinyolComu.jpeg"}
     ]
+
 }
