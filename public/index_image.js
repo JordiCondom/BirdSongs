@@ -4,7 +4,6 @@ const nextButton = document.getElementById('next-button');
 const resultMessage = document.getElementById('result-message');
 const birdNameDropdown = document.getElementById('bird-name');
 const showResultButton = document.getElementById('show-solution-button');
-const levelSelect = document.getElementById('level-select');
 const labelElement = document.getElementById("bird-name-label");
 
 
@@ -24,34 +23,34 @@ fetch('birds.json')
     starter_images = data["starter"];
     nivell0_images = data["nivell0"];
 
+    console.log(all_images.length)
+    console.log(intermig.length)
+    console.log(facils.length)
+    console.log(starter_images.length)
+    console.log(nivell0_images.length)
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     current_level = urlParams.get('level');
     console.log(current_level);
 
-    if (current_level != null) {
-      levelSelect.value = current_level;
-      if (current_level === 'easy') {
-        change_level(facils);
-      } else if (current_level === 'medium') {
-        change_level(intermig);
-      } else if (current_level === 'hard') {
-        change_level(all_images);
-      } else if (current_level == 'starter') {
-        change_level(starter_images);
-      } else if (current_level == 'nivell0') {
-        change_level(nivell0_images);
-      }
-    } else {
-      current_level = 'nivell0';
-      levelSelect.value = current_level;
-      images = nivell0_images;
-
-      let currentImageIndex = Math.floor(Math.random() * images.length);
-      currentImage = images[currentImageIndex];
-      image.src = `images/${currentImage["image"]}`;
-      birdNameDropdown.innerHTML = images.map(({ name }) => `<option value="${name}">${name}</option>`).join('');
+    if ((current_level === 'easy') || (current_level == null)) {
+      change_level(facils);
+    } else if (current_level === 'medium') {
+      change_level(intermig);
+    } else if (current_level === 'hard') {
+      change_level(all_images);
+    } else if (current_level == 'starter') {
+      change_level(starter_images);
+    } else if (current_level == 'nivell0') {
+      change_level(nivell0_images);
     }
+
+    let currentImageIndex = Math.floor(Math.random() * images.length);
+    currentImage = images[currentImageIndex];
+    image.src = `images/${currentImage["image"]}`;
+    birdNameDropdown.innerHTML = images.map(({ name }) => `<option value="${name}">${name}</option>`).join('');
+    
   })
   .catch(error => console.error(error));
 
@@ -88,25 +87,6 @@ nextButton.addEventListener('click', () => {
   console.log(`currentImageIndex: ${currentImageIndex}, currentImage: ${JSON.stringify(currentImage)}`);
 });
 
-levelSelect.addEventListener('change', (event) => {
-    const lvl = event.target.value;
-    if (lvl === 'easy') {
-      current_level = 'easy'
-      change_level(facils)
-    } else if (lvl === 'medium') {
-      current_level = 'medium'
-      change_level(intermig)
-    } else if (lvl === 'hard') {
-      current_level = 'hard'
-      change_level(all_images)
-    } else if (lvl == 'starter') {
-      current_level = 'starter'
-      change_level(starter_images)
-    } else if (lvl == 'nivell0') {
-      current_level = 'nivell0'
-      change_level(nivell0_images)
-    }
-  });
   
   function change_level(images_array) {
     images = images_array

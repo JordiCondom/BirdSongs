@@ -10,13 +10,6 @@
   <body>
     <div class="container">
       <h1>Sons dels Ocells</h1>
-      <select id="level-select" class="button">
-        <option value="nivell0">Primers passos</option>
-        <option value="starter"> Nivell principiant</option>
-        <option value="easy">Nivell fàcil</option>
-        <option value="medium">Nivell mitjà</option>
-        <option value="hard">Nivell impossible</option>
-      </select>
       <div class="sound-container">
         <audio id="audio-player" controls autoplay>
           <source src="" type="audio/mpeg" />
@@ -31,6 +24,9 @@
           </select>
         </form>
         <p id="result-message"></p>
+      </div>
+      <div class="container">
+        <img id="bird-image" src="" alt="Image of the bird">
       </div>
       <div class="button-container">
         <button id="submit-button" class="button">Comprova</button>

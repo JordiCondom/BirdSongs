@@ -11,9 +11,22 @@
         <h1>Joc dels ocells</h1>
         <p>Què t'agradaria practicar?</p>
         <div class="container">
-            <button class="button" onclick="location.href='indexSound.html'">Sons d'ocells</button>
-            <button class="button" onclick="location.href='indexImage.html'">Imatges d'ocells</button>
+            <button class="button" onclick="location.href='indexSound.html?level='+document.getElementById('level-select').value">Sons d'ocells</button>
+            <button class="button" onclick="location.href='indexImage.html?level='+document.getElementById('level-select').value">Imatges d'ocells</button>
         </div>
+        <div class="container">
+            <p>I amb quin nivell?</p>
+        </div>
+        <div class="container">
+            <select id="level-select" class="button">
+                <option value="nivell0">Primers passos (10 ocells)</option>
+                <option value="starter">Nivell principiant (19 ocells)</option>
+                <option value="easy">Nivell fàcil (38 ocells)</option>
+                <option value="medium">Nivell mitjà (84 ocells)</option>
+                <option value="hard">Nivell impossible (217 ocells)</option>
+            </select>
+        </div>
+    </div>
     </div>
 </body>
 </html>

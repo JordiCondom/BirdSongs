@@ -5,8 +5,8 @@ const nextButton = document.getElementById('next-button');
 const resultMessage = document.getElementById('result-message');
 const birdNameDropdown = document.getElementById('bird-name');
 const showResultButton = document.getElementById('show-solution-button');
-const levelSelect = document.getElementById('level-select');
 const labelElement = document.getElementById("bird-name-label");
+const image = document.getElementById('bird-image');
 
 
 let currentSound = null
@@ -30,29 +30,26 @@ fetch('birds.json')
     current_level = urlParams.get('level')
     console.log(current_level)
 
-    if (current_level != null) {
-      levelSelect.value = current_level
-      if (current_level === 'easy') {
-        change_level(facils)
-      } else if (current_level === 'medium') {
-        change_level(intermig)
-      } else if (current_level === 'hard') {
-        change_level(all_sounds)
-      } else if (current_level == 'starter') {
-        change_level(starter_sounds)
-      } else if (current_level == 'nivell0') {
-        change_level(nivell0_sounds)
-      }
-    } else {
-      current_level = 'nivell0'
-      levelSelect.value = current_level
-      sounds = nivell0_sounds
-
-      let currentSoundIndex = Math.floor(Math.random() * sounds.length);
-      currentSound = sounds[currentSoundIndex];
-      audioPlayer.src = `sounds/${currentSound["file"]}`;
-      birdNameDropdown.innerHTML = sounds.map(({ name }) => `<option value="${name}">${name}</option>`).join('');
+    
+    if ((current_level === 'easy') || (current_level == null)) {
+      change_level(facils)
+    } else if (current_level === 'medium') {
+      change_level(intermig)
+    } else if (current_level === 'hard') {
+      change_level(all_sounds)
+    } else if (current_level == 'starter') {
+      change_level(starter_sounds)
+    } else if (current_level == 'nivell0') {
+      change_level(nivell0_sounds)
     }
+
+    let currentSoundIndex = Math.floor(Math.random() * sounds.length);
+    currentSound = sounds[currentSoundIndex];
+    audioPlayer.src = `sounds/${currentSound["file"]}`;
+    birdNameDropdown.innerHTML = sounds.map(({ name }) => `<option value="${name}">${name}</option>`).join('');
+    image.src = `images/${currentSound["image"]}`;
+    image.style.display = 'none';
+    
   })
   .catch(error => console.error(error));
 
@@ -69,6 +66,8 @@ submitButton.addEventListener('click', (event) => {
     submitButton.style.display = 'none';
     showResultButton.style.display = 'none';
     labelElement.style.display = 'none';
+    image.style.display = 'block';
+    image.src = `images/${currentSound["image"]}`;
     resultMessage.textContent = 'Correcte! Has escoltat ' +  selectedBirdName;
   } else {
     resultMessage.textContent = 'Incorrecte, torna-ho a provar.';
@@ -85,31 +84,12 @@ nextButton.addEventListener('click', () => {
   submitButton.style.display = 'block';
   showResultButton.style.display = 'block';
   labelElement.style.display = 'block';
+  image.style.display = 'none';
   resultMessage.textContent = '';
   currentSoundIndex = Math.floor(Math.random() * sounds.length);
   currentSound = sounds[currentSoundIndex];
   audioPlayer.src = `sounds/${currentSound["file"]}`;
   console.log(`currentSoundIndex: ${currentSoundIndex}, currentSound: ${JSON.stringify(currentSound)}`);
-});
-
-levelSelect.addEventListener('change', (event) => {
-  const lvl = event.target.value;
-  if (lvl === 'easy') {
-    current_level = 'easy'
-    change_level(facils)
-  } else if (lvl === 'medium') {
-    current_level = 'medium'
-    change_level(intermig)
-  } else if (lvl === 'hard') {
-    current_level = 'hard'
-    change_level(all_sounds)
-  } else if (lvl == 'starter') {
-    current_level = 'starter'
-    change_level(starter_sounds)
-  } else if (lvl == 'nivell0') {
-    current_level = 'nivell0'
-    change_level(nivell0_sounds)
-  }
 });
 
 function change_level(sounds_array) {
