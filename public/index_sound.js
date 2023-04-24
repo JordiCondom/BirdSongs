@@ -6,6 +6,7 @@ const resultMessage = document.getElementById('result-message');
 const birdNameDropdown = document.getElementById('bird-name');
 const showResultButton = document.getElementById('show-solution-button');
 const levelSelect = document.getElementById('level-select');
+const labelElement = document.getElementById("bird-name-label");
 
 
 let currentSound = null
@@ -64,8 +65,11 @@ submitButton.addEventListener('click', (event) => {
   console.log(currentSound)
   console.log(`selected bird name: ${selectedBirdName}, currentSound.name: ${currentSound["name"].toLowerCase()}`);
   if (selectedBirdName === currentSound["name"]) {
-    window.location.href = `correct.html?guessedBird=${selectedBirdName}&level=${current_level}`;
-    //resultMessage.textContent = 'Correcte!';
+    birdNameDropdown.style.display = 'none';
+    submitButton.style.display = 'none';
+    showResultButton.style.display = 'none';
+    labelElement.style.display = 'none';
+    resultMessage.textContent = 'Correcte! Has escoltat ' +  selectedBirdName;
   } else {
     resultMessage.textContent = 'Incorrecte, torna-ho a provar.';
   }
@@ -77,6 +81,10 @@ showResultButton.addEventListener('click', (event) => {
 
 
 nextButton.addEventListener('click', () => {
+  birdNameDropdown.style.display = 'block';
+  submitButton.style.display = 'block';
+  showResultButton.style.display = 'block';
+  labelElement.style.display = 'block';
   resultMessage.textContent = '';
   currentSoundIndex = Math.floor(Math.random() * sounds.length);
   currentSound = sounds[currentSoundIndex];

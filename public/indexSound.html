@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <button onclick="location.href='index.html'" class="top-left-button">Home</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Sounds Game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sons dels Ocells</h1>
+      <select id="level-select" class="button">
+        <option value="nivell0">Primers passos</option>
+        <option value="starter"> Nivell principiant</option>
+        <option value="easy">Nivell fàcil</option>
+        <option value="medium">Nivell mitjà</option>
+        <option value="hard">Nivell impossible</option>
+      </select>
+      <div class="sound-container">
+        <audio id="audio-player" controls autoplay>
+          <source src="" type="audio/mpeg" />
+        </audio>
+      </div>
+      <div class="form-container">
+        <form>
+          <label id="bird-name-label" for="bird-name">Quin ocell és?</label>
+          <select id="bird-name" name="bird-name">
+            <option disabled selected value="">Tria un ocell</option>
+            ${sounds.map(({ name }) => `<option value="${name}">${name}</option>`)}
+          </select>
+        </form>
+        <p id="result-message"></p>
+      </div>
+      <div class="button-container">
+        <button id="submit-button" class="button">Comprova</button>
+        <button id="show-solution-button" class="button">Mostra la solució</button>
+      </div>
+      <div>
+        <button id="next-button" class="button">Següent so</button>
+      </div>
+    </div>
+    <script src="index_sound.js"></script>
+  </body>
+</html>

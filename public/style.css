@@ -54,6 +54,12 @@ h1 {
   margin-bottom: 0px;
 }
 
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
 label {
   margin-top: 10px;
   display: block;
@@ -74,5 +80,20 @@ audio::-webkit-media-controls-current-time-display,
 #audio-player::-webkit-media-controls-volume-slider-container,
 audio::-webkit-media-controls-time-remaining-display {
   display: none;
+}
+
+img {
+  width: 50%;
+}
+
+.top-left-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f2f2f2;
+  color: #333;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
