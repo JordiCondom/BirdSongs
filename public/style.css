@@ -88,7 +88,7 @@ img {
 
 @media (max-width: 600px) {
   img {
-    width: 50%; /* full width on mobile devices */
+    width: 80%; /* full width on mobile devices */
   }
 }
 
