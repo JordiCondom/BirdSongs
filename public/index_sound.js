@@ -35,7 +35,7 @@ fetch('birds.json')
       change_level(facils)
     } else if (current_level === 'medium') {
       change_level(intermig)
-    } else if (current_laaaevel === 'hard') {
+    } else if (current_level === 'hard') {
       change_level(all_sounds)
     } else if (current_level == 'starter') {
       change_level(starter_sounds)
